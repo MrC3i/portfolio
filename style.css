@@ -30,7 +30,7 @@ body {
     color: var(--grad-3);
     font-family: Montserrat-Regular;
     background-color: var(--background-color);
-    background-image: url('assets/background.jpg');
+    background-image: url('assets/background.webp');
     background-size: cover;
     background-position: center;
     height: 100vh;
