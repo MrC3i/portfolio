@@ -14,7 +14,7 @@ document.documentElement.style.setProperty('--total-width', totalWidth + 'px');
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ['Front-end', 'Back-end', 'Cyber Security'];
+const textArray = ['Front-end', 'Back-end', 'Cybersecurity'];
 const typingDelay = 200;
 const erasingDelay = 100;
 const newTextDelay = 2000;
