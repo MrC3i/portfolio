@@ -1,0 +1,110 @@
+
+.screen {
+    margin-left: 10%;
+    margin-top: 3%;
+    height: 30%;
+    left: 0%;
+    position: absolute;
+    
+}
+
+.ph {
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 45rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #ccc;
+}
+
+.ph p, .ph ul {
+    padding-left: 5%;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.6;
+    width: 95%;
+    list-style: none;
+}
+
+.ph::-webkit-scrollbar {
+    width: 5px;
+}
+
+.ph::-webkit-scrollbar-track {
+    background-color: #ccc; 
+}
+
+.ph::-webkit-scrollbar-thumb {
+    background-color: #999;
+}
+
+
+#ph1 {
+    transform-origin: left;
+    transition: all .5s ease;
+}
+
+#ph1.anmt1 {
+    transform: scaleX(0);
+}
+
+#ph1:before {
+    content: " ";
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    background: linear-gradient(to bottom, var(--grad-2), var(--grad-1), var(--grad-2));
+    background-position: 0 -200px;
+    animation: waveY 2s infinite linear;
+}
+
+#ph2, #ph3, #ph4 {
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: right;
+    transition: all .5s ease;
+}
+
+#ph3 {
+    justify-content: normal;
+    gap: 10%;
+}
+
+#ph3:before {
+    height: 200%;
+    background-position: 0 -(200%);
+}
+
+#ph2.anmt2, #ph3.anmt3, #ph4.anmt4 {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+#ph2:before, #ph3::before, #ph4::before {
+    content: " ";
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    background: linear-gradient(to bottom, var(--grad-2), var(--grad-1), var(--grad-2));
+    background-position: 0 -(100%);
+    animation: waveY 2s infinite linear;
+}
+
+#ph3:before {
+    height: 200%;
+    animation: waveY 2s infinite alternate;
+}
+
+@keyframes waveY {
+
+    0% {
+        background-position: 0 -200px;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}

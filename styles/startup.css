@@ -1,0 +1,135 @@
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    z-index: -2;
+    animation: fadeIn 2s forwards;
+}
+
+.container {
+    animation: fadeAll 1s forwards;
+}
+
+.contd {
+    opacity: 1;
+    transition: opacity 1.5s ease;
+    height: 100vh;
+    width: 100%;
+    padding-top: 1.5%;
+    animation: elements 2s forwards;
+}
+
+[data-name=corner-bottom-right],[data-name=corner-top-left] {
+    opacity: 1;
+    transition: all ease-in-out;
+    position: absolute;
+}
+
+[data-name=corner-top-left] {
+    top: 0;
+    left: 30px;
+    animation: svgTAnmt 2s forwards;
+}
+
+[data-name=corner-bottom-right] {
+    bottom: 0;
+    right: 30px;
+    animation: svgBAnmt 2s forwards;
+}
+
+#tp {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    opacity: 0;
+    animation: tpAnmt 2s forwards;
+}
+
+@keyframes fadeAll {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        background-color: #000;
+    }
+
+    55% {
+        background-color: #000;
+    }
+
+    80% {
+        background-color: #000;
+    }
+
+}
+
+@keyframes elements {
+    0% {
+        transform: scaleX(0);
+    }
+
+    80% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(100%);
+    }
+}
+
+@keyframes svgTAnmt {
+    0% {
+        top: 30%;
+        left: 20%;
+    }
+
+    50% {
+        top: 30%;
+        left: 20%;
+    }
+
+    80% {
+        top: 0;
+        left: 20%;
+    }
+}
+
+@keyframes svgBAnmt {
+    0% {
+        bottom: 30%;
+        right: 20%;
+    }
+
+    50% {
+        bottom: 30%;
+        right: 20%;
+    }
+
+    80% {
+        bottom: 0;
+        right: 20%;
+    }
+}
+
+@keyframes tpAnmt {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+}
+

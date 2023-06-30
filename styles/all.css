@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+:root {
+    --grad-1: #0A71FD;
+    --grad-2: #03edf9;
+    --grad-3: #d1d1d1;
+    --grad-4: transparent;
+    --background-color: #1d1d20;
+    --background-color2: #d1d1d1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-style: normal;
+    cursor: default;
+    opacity: 1;
+}
+
+*::selection {
+    background-color: transparent;
+}
+
+html {
+    line-height: 1.15;
+}
+
+body {
+    color: var(--grad-3);
+    font-family: Montserrat-Regular;
+    background-color: var(--background-color2);
+/*     background-image: url('../assets/background.jpg');
+    background-size: cover;
+    background-position: center; */
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100vw;
+    padding: 0% 8% 0% 8%;
+}
+
+header ul {
+    display: flex;
+    flex-flow: row-reverse;
+    list-style: none;
+    width: 10%;
+    justify-content: space-between;
+}
+
+header ul a svg {
+    width: 35px;
+    height: 35px;
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+}
+
+header ul a svg:hover {
+    transform: scale(1.15);
+}
+
+header ul a svg:hover .cls-1 {
+    fill: #03edf9;
+}
+
+.cls-1 {
+    fill: #ccc;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    padding: 3% 20% 0% 10%;
+    width: 100vw;
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 90px;
+    line-height: 155px;
+}
+
+.lt {
+    position:  absolute;
+    right: 18%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 250px;
+    padding: 2.5%;
+    overflow: hidden;
+}
+
+.lt div {
+    position: absolute;
+    right: 45%;
+    height: 150px;
+    width: 50%;
+    z-index: -1;
+    border-top: 2px solid var(--grad-2);
+    border-left: 2px solid var(--grad-2);
+    border-top-left-radius: 8px;
+    animation: borderAnmt 4s infinite linear;
+}
+
+.lt span {
+    display: flex;
+    flex-flow: column-reverse;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.lt span:hover {
+    transform: scale(1.1);
+
+}
+
+.lt span:before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+    display: inline-block;
+    background: linear-gradient(to left, var(--grad-2), var(--grad-1), var(--grad-2));
+    background-position: calc(var(--total-width)) 0;
+    animation: waveX 12s infinite linear;
+}
+
+#sp1 {
+    margin-top: 20%;
+}
+
+#grad1 .gradient1, #grad2 .gradient2 {
+    animation: lgradient 4s infinite alternate;
+}
+  
+#grad1 .gradient2, #grad2 .gradient1 {
+    animation: lgradient 4s infinite alternate-reverse;
+}
+
+footer p {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+}
+
+@keyframes waveX {
+
+    0% {
+        background-position: calc(var(--total-width) - 100%) 0;
+    }
+
+    100% {
+        background-position: calc(var(--total-width) * -2) 0;
+    }
+}
+
+
+@keyframes borderAnmt {
+
+    0% {
+        border-color: var(--grad-2);
+    }
+
+    50% {
+        border-color: var(--grad-1);
+    }
+
+    100% {
+        border-color: var(--grad-2);
+    }
+}
+
+@keyframes lgradient {
+
+    0% {
+      stop-color: var(--grad-2);
+      offset: 0%;
+    }
+    50% {
+      stop-color: var(--grad-1);
+      offset: 50%;
+    }
+    100% {
+      stop-color: var(--grad-2);
+      offset: 100%;
+    }
+
+}
